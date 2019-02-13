@@ -63,17 +63,20 @@ img:hover{
 	position:relative;
 }
 
-.shaker:hover{
+.shaker{
 	position: relative;
+	animation-name: none;
+	animation-iteration-count: infinite;
 }
 
-img:hover, .shaker, .toxic::before, .toxic::after{
+img:hover, .shaker:hover, .toxic::before, .toxic::after{
 	animation-name: shake;
 	animation-duration: .3s;
 	animation-iteration-count: infinite;
 }
 
 .shaker .shaker{
+	animation-name:shake;
 	animation-duration:.5s;
 	animation-direction: alternate;
 }
