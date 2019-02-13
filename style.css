@@ -16,6 +16,11 @@
 	100%	{left:-2px; top:-2px;}
 }
 
+html {
+  background-image: url("img/slimetile.png");
+  background-repeat: repeat;
+}
+
 span, div, li{
 	text-shadow: -1px 1px white;
 }
