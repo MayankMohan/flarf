@@ -1,0 +1,91 @@
+@keyframes toxicity {
+	0%		{color: #a3c010}
+	20%		{color: #96e05e}
+	40%		{color: #71a54a}
+	60%		{color: #5db243}
+	80%		{color: #92b243}
+	100%	{color: #a3c010}
+}
+
+@keyframes shake{
+	0%		{left:-2px; top:-2px;}
+	20%		{left: 4px; top: 0px;}
+	40%		{left:-2px; top: 2px;}
+	60%		{left: 2px; top:-2px;}
+	80%		{left: 0px; top: 4px;}
+	100%	{left:-2px; top:-2px;}
+}
+
+span, div, li{
+	text-shadow: -1px 1px white;
+}
+
+.toxic{
+	position: relative;
+	color: #a3c010;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-transform: capitalize;
+	text-shadow: none;
+	animation-name: toxicity;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+}
+
+.toxic:hover{
+	color: #f39cf4;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: lowercase;
+	animation-name: none;
+}
+
+.toxic::before, .toxic::after{
+	content: attr(data);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	width: 100%;
+	height: 100%;
+}
+
+img{
+	position:static;
+	width: 600px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 1;
+	transition: opacity 1s;
+}
+
+img:hover{
+	position:relative;
+}
+
+.shaker{
+	position: relative;
+}
+
+img:hover, .shaker, .toxic::before, .toxic::after{
+	animation-name: shake;
+	animation-duration: .3s;
+	animation-iteration-count: infinite;
+}
+
+.toxic::before{
+	animation-duration: 0.4s;
+}
+
+.toxic:hover::before, .toxic:hover::after{
+	content: "";
+}
+
+.run{
+	
+}
+
+.run:hover button{
+	position:relative;
+	top: -3em;
+}
